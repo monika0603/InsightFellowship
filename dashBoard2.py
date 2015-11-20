@@ -1,3 +1,5 @@
+# Usage: python dashBoard2.py input.txt
+# input.txt contains the websites to monitor
 import random
 import string
 import sys
@@ -32,24 +34,24 @@ def page_loader(url_name_a):
     return target_page1
 
 if __name__ == '__main__':
-    target_urla = sys.argv[1]
-    fileHandle = open(target_urla)
-    new_file_name = 'VanderbiltTier2Monitoring.html'
-    list = ['a', 'b', 'c', 'd', 'e']
+    target_urla = sys.argv[1] # Parses input.txt
+    fileHandle = open(target_urla) # Opens input.txt
+    new_file_name = 'VanderbiltTier2Monitoring.html' # Output page to create
+    list = ['a', 'b', 'c', 'd'] # List corresponding to the number lines in input.txt
 
     lineNumber = 0
-    for line in fileHandle:
-        link = line.rstrip()
-        print link
+    for line in fileHandle: # Looping over the number of lines in input.txt
+        link = line.rstrip() # Stripping whitespaces
+        print lineNumber
+        print link # Printing to ensure
+        list[lineNumber] = page_loader(link) # Calling function page_loader()
         lineNumber = lineNumber + 1
-        list[lineNumber] = page_loader(link)
-    
         
-    with open(os.path.join(new_file_name), 'w') as new_file:
+    with open(os.path.join(new_file_name), 'w') as new_file: # Concatenating webpages
+        new_file.write(list[0])
         new_file.write(list[1])
         new_file.write(list[2])
         new_file.write(list[3])
-        new_file.write(list[4])
 
 
 
