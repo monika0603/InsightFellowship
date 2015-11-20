@@ -1,0 +1,4 @@
+https://monitor.accre.vanderbilt.edu/phedex.php
+https://www.hep.vanderbilt.edu/~appelte1/depotMon.html
+http://cmsdoc.cern.ch/cmscc/cmstv/cmstv.jsp?channel=4
+http://submit-3.t2.ucsd.edu/CSstoragePath/glideinWMSMonitor.html
